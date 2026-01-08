@@ -1,7 +1,16 @@
 # Traditional Feast Order Management (J1.L.P0028)
 
+> **Made by Vader from MindyCoding**
+
+## ⚠️ CẢNH BÁO (DISCLAIMER)
+**Mã nguồn này CHỈ DÙNG ĐỂ THAM KHẢO cấu trúc và tư duy lập trình.**
+**NGHIÊM CẤM sử dụng toàn bộ hoặc một phần dự án này để nộp bài (Assignment/Lab/Project).**
+Hãy tự viết code của bạn để đảm bảo Liêm chính học thuật (Academic Integrity).
+
+---
+
 ## 📝 Giới thiệu
-Ứng dụng Console quản lý đặt tiệc truyền thống (Traditional Feast), cho phép quản lý khách hàng, thực đơn và đơn đặt hàng. Dự án được xây dựng theo mô hình **n-Layer** (MVC) tuân thủ các nguyên lý OOP (Encapsulation, Inheritance, Polymorphism).
+Ứng dụng Console quản lý đặt tiệc truyền thống (Traditional Feast), cho phép quản lý khách hàng, thực đơn và đơn đặt hàng. Dự án được xây dựng theo mô hình **n-Layer** (MVC) tuân thủ các nguyên lý OOP.
 
 ## 🚀 Tính năng chính
 1.  **Register Customer**: Đăng ký khách hàng mới (Validate ID, Tên, SĐT, Email).
@@ -17,12 +26,12 @@
 Dự án được chia thành các gói (packages) để đảm bảo tính *Low Coupling - High Cohesion*:
 * **`model`**: Chứa các thực thể (`Customer`, `Order`, `SetMenu`).
 * **`business`**: Chứa logic nghiệp vụ và quản lý danh sách (`Customers`, `Orders`, `SetMenus`, `Workable`).
-* **`tools`**: Các tiện ích hỗ trợ (`Inputter`, `Acceptable` - Validate, `FileUtils` - Đọc/Ghi file).
+* **`tools`**: Các tiện ích hỗ trợ (`Inputter`, `Acceptable`, `FileUtils`).
 * **`dispatcher`**: Chứa hàm Main và Menu điều khiển (`Main`).
 
 ## 📋 Yêu cầu hệ thống
 * **Java JDK**: 8 hoặc cao hơn.
-* **Maven**: Để quản lý build (hoặc NetBeans Ant).
+* **Maven**: Để quản lý build.
 * **Bảng mã**: UTF-8 (Bắt buộc để hiển thị tiếng Việt).
 
 ## ⚙️ Cài đặt và Chạy
@@ -38,7 +47,7 @@ Tại thư mục gốc của dự án, chạy lệnh:
 mvn clean package
 File .jar sẽ được tạo ra trong thư mục target/.
 
-3. Cách chạy (Quan trọng)
+3. Cách chạy
 Cách 1: Chạy trên NetBeans
 Thêm dòng sau vào Project Properties > Run > VM Options để tránh lỗi font tiếng Việt:
 
@@ -46,7 +55,7 @@ Plaintext
 
 -Dfile.encoding=UTF-8
 Cách 2: Chạy bằng Terminal (CMD)
-Copy file FeastMenu.csv vào thư mục target/ (nơi chứa file .jar).
+Copy file FeastMenu.csv vào thư mục target/.
 
 Mở CMD tại thư mục đó.
 
@@ -61,18 +70,10 @@ DOS
 
 java -jar TraditionalFeastOrderManagement-1.0-SNAPSHOT.jar
 ⚠️ Các lỗi thường gặp (Troubleshooting)
-1. Lỗi "List is empty" hoặc không hiện Menu:
+Lỗi "List is empty": Kiểm tra file FeastMenu.csv đã nằm đúng chỗ chưa, và dùng dấu phẩy , ngăn cách.
 
-Kiểm tra xem file FeastMenu.csv đã nằm đúng chỗ chưa.
+Lỗi hiển thị tiếng Việt: Nhớ Save file CSV dạng UTF-8 và cấu hình console chcp 65001.
 
-Kiểm tra xem trong file CSV có dùng dấu chấm phẩy ; thay vì dấu phẩy , không.
+Lỗi "no main manifest attribute": Kiểm tra file pom.xml đã cấu hình maven-jar-plugin.
 
-2. Lỗi hiển thị tiếng Việt (dấu ? hoặc ô vuông):
-
-Hãy chắc chắn file CSV đã được Save As... -> Encoding: UTF-8.
-
-Khi chạy dòng lệnh, đừng quên chcp 65001.
-
-3. Lỗi "no main manifest attribute":
-
-Hãy chắc chắn file pom.xml đã cấu hình maven-jar-plugin trỏ đúng dispatcher.Main.
+Author: Vader from MindyCoding
