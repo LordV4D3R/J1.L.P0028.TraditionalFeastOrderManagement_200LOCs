@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
+import model.Customer;
 import model.Order;
 import model.SetMenu;
 import tools.FileUtils;
