@@ -4,7 +4,7 @@ package dispatcher;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
+// Test git
 import business.Customers;
 import business.Orders;
 import business.SetMenus;
@@ -16,7 +16,7 @@ public class Main {
         SetMenus menuManager = new SetMenus();
         Customers customerManager = new Customers();
         
-        // Orders cần biết về Customer và Menu để kiểm tra ID hợp lệ
+        // Orders cần biết về Customer và Menu để kiểm tra ID hợp lệ, test git
         Orders orderManager = new Orders(customerManager, menuManager);
         
         Inputter inputter = new Inputter();
